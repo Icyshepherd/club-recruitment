@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>selection | 社团招新平台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="screen">
+    <header class="masthead">
+      <div class="wrap masthead-inner masthead-nav">
+        <a class="logo" href="./Home.html">社团招新平台</a>
+        <nav class="top-nav" aria-label="主导航">
+          <a href="./Home.html">首页</a>
+          <a class="is-active" href="./selection.html">社团</a>
+          <a href="./chat.html">消息</a>
+          <a href="./personal.html">我的</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="selection-main wrap">
+      <aside class="filter-panel">
+        <h2>筛选</h2>
+        <div class="filter-tags">
+          <span class="filter-tag">低投入 ×</span>
+          <span class="filter-tag">社交陪伴 ×</span>
+          <span class="filter-tag">兴趣体验 ×</span>
+        </div>
+        <div class="filter-group">
+          <h3>兴趣体验</h3>
+          <label><input checked type="checkbox" /> 轻松兴趣</label>
+          <label><input checked type="checkbox" /> 乐器爱好者协会</label>
+          <label><input checked type="checkbox" /> 成长训练型</label>
+          <label><input checked type="checkbox" /> 体育竞赛类社团</label>
+          <label><input checked type="checkbox" /> 核心组织型</label>
+          <label><input checked type="checkbox" /> 完整架构的大型社团</label>
+        </div>
+        <div class="filter-group">
+          <h3>每周投入时间（h）</h3>
+          <div class="slider-row">
+            <span>0</span>
+            <input type="range" min="0" max="40" value="40" />
+            <span>40</span>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h3>活动收获</h3>
+          <label><input checked type="checkbox" /> 社交陪伴</label>
+          <label><input checked type="checkbox" /> 技能提升</label>
+          <label><input checked type="checkbox" /> 荣誉成就</label>
+        </div>
+        <div class="filter-group">
+          <h3>报名活动</h3>
+          <label><input checked type="checkbox" /> 体验参观</label>
+          <label><input checked type="checkbox" /> 演出展览</label>
+          <label><input checked type="checkbox" /> 笔试面试</label>
+        </div>
+      </aside>
+
+      <section class="selection-content">
+        <div class="selection-toolbar">
+          <div class="search-bar">
+            <input type="text" placeholder="搜索" />
+          </div>
+          <div class="toolbar-tabs">
+            <button class="tab is-active" type="button">兴趣综合</button>
+            <button class="tab" type="button">热门社团</button>
+            <button class="tab" type="button">新社团</button>
+          </div>
+        </div>
+
+        <div class="club-grid">
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>一句话简介</p>
+            <h3>社团名称</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>自己的热爱最香</p>
+            <h3>烘焙社</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>有机会线下看机切啦</p>
+            <h3>音游社</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>悠久的历史，丰富的平台资源</p>
+            <h3>同济翼驰车队</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>每年两次大型演出机会</p>
+            <h3>民乐团</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>连续三年市级中文辩论冠军</p>
+            <h3>中文辩论社</h3>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div><p class="footer-brand">社团招新平台</p></div>
+        <div>
+          <h3>首页</h3>
+          <a href="./Home.html">AI推荐</a>
+          <a href="./Home.html">精彩活动</a>
+          <a href="./Home.html">探索发现</a>
+        </div>
+        <div>
+          <h3>社团</h3>
+          <a href="./selection.html">社团检索与筛选</a>
+        </div>
+        <div>
+          <h3>消息</h3>
+          <a href="./chat.html">活动通知</a>
+          <a href="./chat.html">AI推荐</a>
+        </div>
+        <div>
+          <h3>我的</h3>
+          <a href="./personal.html">兴趣标签</a>
+          <a href="./personal.html">我的社团</a>
+          <a href="./personal.html">报名进程</a>
+          <a href="./personal.html">活动记录</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

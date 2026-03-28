@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>personal | 社团招新平台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="screen">
+    <header class="masthead">
+      <div class="wrap masthead-inner masthead-nav">
+        <a class="logo" href="./Home.html">社团招新平台</a>
+        <nav class="top-nav" aria-label="主导航">
+          <a href="./Home.html">首页</a>
+          <a href="./selection.html">社团</a>
+          <a href="./chat.html">消息</a>
+          <a class="is-active" href="./personal.html">我的</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="personal-page wrap">
+      <section class="personal-section">
+        <h1 class="section-title">基本信息</h1>
+        <form class="form-block">
+          <label>姓名<input type="text" placeholder="Value" /></label>
+          <label>学号<input type="text" placeholder="Value" /></label>
+          <label>邮箱<input type="text" placeholder="Value" /></label>
+          <label>手机号<input type="text" placeholder="Value" /></label>
+        </form>
+        <button class="button button-dark button-small" type="button">修改信息</button>
+      </section>
+
+      <section class="personal-section">
+        <h2 class="section-title">我的兴趣标签</h2>
+        <div class="tag-row personal-tags">
+          <span class="chip">摄影</span>
+          <span class="chip">绘画</span>
+          <span class="chip">音乐</span>
+          <span class="chip">模型兴趣</span>
+          <span class="chip">朋友人</span>
+          <span class="chip">社交空间</span>
+        </div>
+        <button class="button button-dark button-small" type="button">增加兴趣标签</button>
+      </section>
+
+      <section class="personal-section">
+        <h2 class="section-title">我的社团</h2>
+        <article class="my-club-card">
+          <img src="./image/personal-wodeshetuan-1.png" alt="我的社团封面图" />
+          <div>
+            <h3>社团名称</h3>
+            <p>部门职位</p>
+            <a href="./club-introduction.html">管理群组 +</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="personal-section">
+        <h2 class="section-title">报名进程</h2>
+        <div class="progress-line">
+          <div class="progress-item is-done">
+            <span></span>
+            <p>简历投递</p>
+          </div>
+          <div class="progress-item is-done">
+            <span></span>
+            <p>面试通过</p>
+          </div>
+          <div class="progress-item">
+            <span></span>
+            <p>等待招新结果</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="personal-section">
+        <h2 class="section-title">活动记录</h2>
+        <div class="card-grid card-grid-3">
+          <article class="event-card">
+            <img src="./image/personal-huodongjilu-1.png" alt="活动记录图片1" />
+            <div class="event-body">
+              <h3>民乐团冬季音乐会</h3>
+              <p>2024年1月30日 18:00</p>
+              <p>演出形式：已完成</p>
+              <a href="./club-introduction.html">查看详情 +</a>
+            </div>
+          </article>
+          <article class="event-card">
+            <img src="./image/personal-huodongjilu-2.png" alt="活动记录图片2" />
+            <div class="event-body">
+              <h3>烘焙社体验活动</h3>
+              <p>2024年6月14日 4:00</p>
+              <p>活动形式：已完成</p>
+              <a href="./club-introduction.html">查看详情 +</a>
+            </div>
+          </article>
+          <article class="event-card">
+            <img src="./image/personal-huodongjilu-3.png" alt="活动记录图片3" />
+            <div class="event-body">
+              <h3>辩论竞赛观赛</h3>
+              <p>2024年6月20日 18:00</p>
+              <p>活动形式：待参加</p>
+              <a href="./club-introduction.html">查看详情 +</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div><p class="footer-brand">社团招新平台</p></div>
+        <div>
+          <h3>首页</h3>
+          <a href="./Home.html">AI推荐</a>
+          <a href="./Home.html">精彩活动</a>
+          <a href="./Home.html">探索发现</a>
+        </div>
+        <div>
+          <h3>社团</h3>
+          <a href="./selection.html">社团检索与筛选</a>
+        </div>
+        <div>
+          <h3>消息</h3>
+          <a href="./chat.html">活动通知</a>
+          <a href="./chat.html">AI推荐</a>
+        </div>
+        <div>
+          <h3>我的</h3>
+          <a href="./personal.html">兴趣标签</a>
+          <a href="./personal.html">我的社团</a>
+          <a href="./personal.html">报名进程</a>
+          <a href="./personal.html">活动记录</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
