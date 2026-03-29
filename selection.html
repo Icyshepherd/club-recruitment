@@ -12,7 +12,7 @@
         <a class="logo" href="./Home.html">社团招新平台</a>
         <nav class="top-nav" aria-label="主导航">
           <a href="./Home.html">首页</a>
-          <a class="is-active" href="./selection.html">社团</a>
+          <a class="is-active" href="./selection.html">社团报名</a>
           <a href="./chat.html">消息</a>
           <a href="./personal.html">我的</a>
         </nav>
@@ -22,46 +22,47 @@
     <main class="selection-main wrap">
       <aside class="filter-panel">
         <h2>筛选</h2>
-        <div class="filter-tags">
-          <span class="filter-tag">低投入 ×</span>
-          <span class="filter-tag">社交陪伴 ×</span>
-          <span class="filter-tag">兴趣体验 ×</span>
+        <div class="filter-tags" id="selection-tags">
+          <span class="filter-tag" data-empty="true">未选择筛选条件</span>
         </div>
+
         <div class="filter-group">
           <h3>兴趣体验</h3>
-          <label><input checked type="checkbox" /> 轻松兴趣</label>
-          <label><input checked type="checkbox" /> 乐器爱好者协会</label>
-          <label><input checked type="checkbox" /> 成长训练型</label>
-          <label><input checked type="checkbox" /> 体育竞赛类社团</label>
-          <label><input checked type="checkbox" /> 核心组织型</label>
-          <label><input checked type="checkbox" /> 完整架构的大型社团</label>
+          <label><input checked type="checkbox" class="selection-filter" data-group="兴趣体验" value="轻松兴趣型" />轻松兴趣型</label>
+          <label><input type="checkbox" class="selection-filter" data-group="兴趣体验" value="成长训练型" />成长训练型</label>
+          <label><input type="checkbox" class="selection-filter" data-group="兴趣体验" value="核心组织型" />核心组织型</label>
         </div>
+
         <div class="filter-group">
           <h3>每周投入时间（h）</h3>
           <div class="slider-row">
             <span>0</span>
-            <input type="range" min="0" max="40" value="40" />
+            <input id="weekly-hours" type="range" min="0" max="40" value="18" />
             <span>40</span>
           </div>
+          <p class="slider-note">当前选择：<span id="weekly-hours-value">18</span>h</p>
         </div>
+
         <div class="filter-group">
           <h3>活动收获</h3>
-          <label><input checked type="checkbox" /> 社交陪伴</label>
-          <label><input checked type="checkbox" /> 技能提升</label>
-          <label><input checked type="checkbox" /> 荣誉成就</label>
+          <label><input checked type="checkbox" class="selection-filter" data-group="活动收获" value="社交陪伴" />社交陪伴</label>
+          <label><input checked type="checkbox" class="selection-filter" data-group="活动收获" value="技能提升" />技能提升</label>
+          <label><input checked type="checkbox" class="selection-filter" data-group="活动收获" value="荣誉成就" />荣誉成就</label>
         </div>
+
         <div class="filter-group">
           <h3>报名活动</h3>
-          <label><input checked type="checkbox" /> 体验参观</label>
-          <label><input checked type="checkbox" /> 演出展览</label>
-          <label><input checked type="checkbox" /> 笔试面试</label>
+          <label><input checked type="checkbox" class="selection-filter" data-group="报名活动" value="体验参观" />体验参观</label>
+          <label><input checked type="checkbox" class="selection-filter" data-group="报名活动" value="演出展示" />演出展示</label>
+          <label><input checked type="checkbox" class="selection-filter" data-group="报名活动" value="笔试面试" />笔试面试</label>
         </div>
       </aside>
 
       <section class="selection-content">
         <div class="selection-toolbar">
-          <div class="search-bar">
-            <input type="text" placeholder="搜索" />
+          <div class="search-bar search-bar-confirm">
+            <input type="text" placeholder="搜索社团名称、活动关键词" />
+            <button type="button" class="search-confirm">确认</button>
           </div>
           <div class="toolbar-tabs">
             <button class="tab is-active" type="button">兴趣综合</button>
@@ -73,32 +74,32 @@
         <div class="club-grid">
           <article class="club-card" onclick="location.href='./club-introduction.html'">
             <div class="club-placeholder"></div>
-            <p>一句话简介</p>
-            <h3>社团名称</h3>
-          </article>
-          <article class="club-card" onclick="location.href='./club-introduction.html'">
-            <div class="club-placeholder"></div>
-            <p>自己的热爱最香</p>
-            <h3>烘焙社</h3>
-          </article>
-          <article class="club-card" onclick="location.href='./club-introduction.html'">
-            <div class="club-placeholder"></div>
-            <p>有机会线下看机切啦</p>
-            <h3>音游社</h3>
-          </article>
-          <article class="club-card" onclick="location.href='./club-introduction.html'">
-            <div class="club-placeholder"></div>
-            <p>悠久的历史，丰富的平台资源</p>
-            <h3>同济翼驰车队</h3>
-          </article>
-          <article class="club-card" onclick="location.href='./club-introduction.html'">
-            <div class="club-placeholder"></div>
-            <p>每年两次大型演出机会</p>
+            <p>轻松上手，适合热爱舞台与合奏的新成员</p>
             <h3>民乐团</h3>
           </article>
           <article class="club-card" onclick="location.href='./club-introduction.html'">
             <div class="club-placeholder"></div>
-            <p>连续三年市级中文辩论冠军</p>
+            <p>从零开始也能体验甜品制作与校园市集合作</p>
+            <h3>烘焙社</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>适合喜欢游戏、推理与线下桌游互动的同学</p>
+            <h3>音游社</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction-tjuracing.html'">
+            <div class="club-placeholder"></div>
+            <p>重视训练与项目执行，适合长期投入的成员</p>
+            <h3>同济翼驰车队</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>活动节奏稳定，适合想积累组织经验的同学</p>
+            <h3>志愿服务社</h3>
+          </article>
+          <article class="club-card" onclick="location.href='./club-introduction.html'">
+            <div class="club-placeholder"></div>
+            <p>围绕表达、辩论与团队协作展开成长训练</p>
             <h3>中文辩论社</h3>
           </article>
         </div>
@@ -110,25 +111,19 @@
         <div><p class="footer-brand">社团招新平台</p></div>
         <div>
           <h3>首页</h3>
-          <a href="./Home.html">AI推荐</a>
-          <a href="./Home.html">精彩活动</a>
-          <a href="./Home.html">探索发现</a>
+          <a href="./Home.html">首页</a>
         </div>
         <div>
-          <h3>社团</h3>
-          <a href="./selection.html">社团检索与筛选</a>
+          <h3>社团报名</h3>
+          <a href="./selection.html">社团报名</a>
         </div>
         <div>
           <h3>消息</h3>
-          <a href="./chat.html">活动通知</a>
-          <a href="./chat.html">AI推荐</a>
+          <a href="./chat.html">消息</a>
         </div>
         <div>
           <h3>我的</h3>
-          <a href="./personal.html">兴趣标签</a>
-          <a href="./personal.html">我的社团</a>
-          <a href="./personal.html">报名进程</a>
-          <a href="./personal.html">活动记录</a>
+          <a href="./personal.html">我的</a>
         </div>
       </div>
     </footer>

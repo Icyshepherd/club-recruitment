@@ -12,7 +12,7 @@
         <a class="logo" href="./Home.html">社团招新平台</a>
         <nav class="top-nav" aria-label="主导航">
           <a href="./Home.html">首页</a>
-          <a href="./selection.html">社团</a>
+          <a href="./selection.html">社团报名</a>
           <a href="./chat.html">消息</a>
           <a href="./personal.html">我的</a>
         </nav>
@@ -22,59 +22,90 @@
     <main class="club-page">
       <section class="club-hero">
         <div class="wrap club-hero-inner">
+          <p class="club-hero-kicker">社团招新平台</p>
           <h1>社团名称</h1>
           <div class="club-badges">
-            <span>校园</span>
-            <span>社团</span>
+            <span>社团tag1</span>
+            <span>社团tag2</span>
           </div>
-          <div class="club-summary-card">
-            <div class="summary-placeholder"></div>
-            <div class="summary-placeholder"></div>
-            <div class="summary-placeholder"></div>
+          <div class="club-hero-actions">
+            <a class="button button-dark" href="#club-signup">立刻报名</a>
+            <button class="button button-light club-follow-button" type="button" data-follow-toggle data-followed="false">关注加群</button>
+          </div>
+          <div class="club-summary-card club-summary-detail">
+            <div class="summary-metric">
+              <strong>活动频次</strong>
+              <span>每周活动 / 体验场次</span>
+            </div>
+            <div class="summary-metric">
+              <strong>报名方式</strong>
+              <span>可直接加入 / 体验后报名 / 需要面试</span>
+            </div>
+            <div class="summary-metric">
+              <strong>适合人群</strong>
+              <span>喜欢社交、训练成长或项目实践的同学</span>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="club-section wrap">
+        <p class="club-location">活动地点</p>
         <h2>引人入胜的社团宣传标语</h2>
-        <div class="intro-columns">
+        <p class="club-lead">社团简介与招新情况</p>
+        <p class="club-lead">社团简介与招新情况</p>
+        <p class="club-lead">社团简介与招新情况</p>
+
+        <div class="intro-columns club-intro-detail">
           <article>
-            <h3>基本资料展示</h3>
-            <p>简要说明社团的定位、活动主题与适合人群。</p>
+            <h3>基本要求及投入</h3>
+            <p>参与成本：活动频次 / 每周投入时间 / 早起熬夜需求</p>
+            <p>技能要求：适合零基础 / 具体技能要求</p>
+            <p>报名要求：可直接加入 / 体验后报名 / 需要面试</p>
           </article>
           <article>
-            <h3>加入后的体验</h3>
-            <p>用短文案概括社团活动频率、氛围与成长路径。</p>
+            <h3>加入后你能获得</h3>
+            <p>社交关系：认识同好、固定活动伙伴</p>
+            <p>技能成长：拍摄、写作、辩论、组织策划</p>
+            <p>资源机会：比赛、演出、校内项目、校外合作</p>
+            <p>成就体验：作品展示、奖项、干部经历</p>
           </article>
           <article>
-            <h3>竞争信息</h3>
-            <p>介绍报名方式、筛选流程与社团要求。</p>
+            <h3>更多信息</h3>
+            <p>社团的其他平台链接：</p>
+            <p>如各大社媒主页</p>
+            <p>社团官方网站主页</p>
+            <p>相关赛事平台网站</p>
           </article>
         </div>
       </section>
 
       <section class="club-section wrap">
         <h2>资源平台</h2>
+        <p class="section-subtitle">简单介绍优势</p>
         <div class="resource-grid">
-          <article class="resource-card">
-            <span class="resource-dot resource-dot-green"></span>
+          <article class="resource-card resource-card-large">
+            <span class="resource-icon resource-icon-green"></span>
             <div>
-              <h3>资源</h3>
-              <p>活动场地、器材支持、指导老师。</p>
+              <h3>指导老师</h3>
+              <p>老师title</p>
+              <strong>对社团的具体指导作用，老师优点，等</strong>
             </div>
           </article>
-          <article class="resource-card">
-            <span class="resource-dot resource-dot-pink"></span>
+          <article class="resource-card resource-card-large">
+            <span class="resource-icon resource-icon-pink"></span>
             <div>
-              <h3>合作形式</h3>
-              <p>跨社团联动、项目实践、品牌活动。</p>
+              <h3>合作企业/场地/老师等</h3>
+              <p>合作方title</p>
+              <strong>合作形式，平台介绍，等</strong>
             </div>
           </article>
         </div>
       </section>
 
       <section class="club-section wrap">
-        <h2>社团风采</h2>
+        <h2>社团新闻</h2>
+        <p class="section-subtitle">瀑布流内容，用真实活动、照片、短文案展现社团日常。</p>
         <div class="club-gallery">
           <img src="./image/club-introduction-shetuanfengcai-1.png" alt="社团风采图片1" />
           <img src="./image/club-introduction-shetuanfengcai-2.png" alt="社团风采图片2" />
@@ -86,32 +117,87 @@
 
       <section class="club-section wrap">
         <h2>部门/岗位</h2>
-        <div class="role-grid">
-          <article class="role-card"><h3>宣传部</h3><p>负责内容发布与视觉呈现。</p></article>
-          <article class="role-card"><h3>活动部</h3><p>负责活动策划与现场执行。</p></article>
-          <article class="role-card"><h3>外联部</h3><p>负责合作沟通与资源对接。</p></article>
-          <article class="role-card"><h3>组织部</h3><p>负责排期、签到与流程整理。</p></article>
-          <article class="role-card"><h3>文案组</h3><p>负责宣传文案与活动报道。</p></article>
-          <article class="role-card"><h3>影像组</h3><p>负责摄影、剪辑与内容存档。</p></article>
-          <article class="role-card"><h3>训练组</h3><p>负责能力训练与成员带教。</p></article>
-          <article class="role-card"><h3>后勤组</h3><p>负责物料准备与现场支持。</p></article>
-          <article class="role-card"><h3>运营组</h3><p>负责社团平台与对外传播。</p></article>
+        <p class="section-subtitle">一句话介绍。该模块针对核心组织型社团，小型兴趣社团可省略</p>
+        <div class="role-grid role-grid-detailed">
+          <article class="role-card role-card-pink">
+            <div class="role-card-head"><span class="role-icon"></span><div><h3>部门A</h3><p>规模（如人数）</p></div></div>
+            <strong>部门简介</strong>
+            <p>负责内容介绍</p>
+            <p>具体岗位介绍</p>
+          </article>
+          <article class="role-card role-card-purple">
+            <div class="role-card-head"><span class="role-icon"></span><div><h3>部门C</h3><p>规模（如人数）</p></div></div>
+            <strong>部门简介</strong>
+            <p>负责内容介绍</p>
+            <p>具体岗位介绍</p>
+          </article>
+          <article class="role-card role-card-cyan">
+            <div class="role-card-head"><span class="role-icon"></span><div><h3>部门F</h3><p>规模（如人数）</p></div></div>
+            <strong>部门简介</strong>
+            <p>负责内容介绍</p>
+            <p>具体岗位介绍</p>
+          </article>
+          <article class="role-card role-card-yellow">
+            <div class="role-card-head"><span class="role-icon"></span><div><h3>部门B</h3><p>规模（如人数）</p></div></div>
+            <strong>部门简介</strong>
+            <p>负责内容介绍</p>
+            <p>具体岗位介绍</p>
+          </article>
+          <article class="role-card role-card-green">
+            <div class="role-card-head"><span class="role-icon"></span><div><h3>部门D</h3><p>规模（如人数）</p></div></div>
+            <strong>部门简介</strong>
+            <p>负责内容介绍</p>
+            <p>具体岗位介绍</p>
+          </article>
+          <article class="role-card role-card-blue">
+            <div class="role-card-head"><span class="role-icon"></span><div><h3>部门G</h3><p>规模（如人数）</p></div></div>
+            <strong>部门简介</strong>
+            <p>负责内容介绍</p>
+            <p>具体岗位介绍</p>
+          </article>
+          <article class="role-card role-card-red role-card-centered">
+            <div class="role-card-head"><span class="role-icon"></span><div><h3>部门E</h3><p>规模（如人数）</p></div></div>
+            <strong>部门简介</strong>
+            <p>负责内容介绍</p>
+            <p>具体岗位介绍</p>
+          </article>
         </div>
       </section>
 
-      <section class="club-section wrap">
-        <div class="join-inline">
-          <div>
-            <h2>报名信息</h2>
-            <p>填写基本资料后即可进入后续流程。</p>
+      <section class="club-section wrap" id="club-signup">
+        <article class="club-signup-card">
+          <div class="club-signup-header">
+            <h2>社团名称</h2>
+            <p>报名信息填写</p>
           </div>
-          <form class="mini-form">
-            <input type="text" placeholder="姓名" />
-            <input type="text" placeholder="联系方式" />
-            <input type="text" placeholder="擅长方向" />
-            <button class="button button-dark" type="button">提交报名</button>
+          <form class="club-signup-form">
+            <label>
+              <span>想加入的原因</span>
+              <input type="text" placeholder="Value" />
+            </label>
+            <label>
+              <span>意向部门/岗位</span>
+              <select>
+                <option>部门A</option>
+                <option>部门B</option>
+                <option>部门C</option>
+                <option>部门D</option>
+                <option>部门E</option>
+                <option>部门F</option>
+                <option>部门G</option>
+              </select>
+            </label>
+            <label>
+              <span>其他信息（根据社团需求）</span>
+              <textarea placeholder="Value"></textarea>
+            </label>
+            <label class="signup-check">
+              <input type="checkbox" checked />
+              <span>I accept the terms<br /><a href="./club-introduction.html">Read our T&amp;Cs</a></span>
+            </label>
+            <button class="button button-dark club-signup-submit" type="submit">确认报名</button>
           </form>
-        </div>
+        </article>
       </section>
     </main>
 
@@ -120,25 +206,19 @@
         <div><p class="footer-brand">社团招新平台</p></div>
         <div>
           <h3>首页</h3>
-          <a href="./Home.html">AI推荐</a>
-          <a href="./Home.html">精彩活动</a>
-          <a href="./Home.html">探索发现</a>
+          <a href="./Home.html">首页</a>
         </div>
         <div>
-          <h3>社团</h3>
-          <a href="./selection.html">社团检索与筛选</a>
+          <h3>社团报名</h3>
+          <a href="./selection.html">社团报名</a>
         </div>
         <div>
           <h3>消息</h3>
-          <a href="./chat.html">活动通知</a>
-          <a href="./chat.html">AI推荐</a>
+          <a href="./chat.html">消息</a>
         </div>
         <div>
           <h3>我的</h3>
-          <a href="./personal.html">兴趣标签</a>
-          <a href="./personal.html">我的社团</a>
-          <a href="./personal.html">报名进程</a>
-          <a href="./personal.html">活动记录</a>
+          <a href="./personal.html">我的</a>
         </div>
       </div>
     </footer>

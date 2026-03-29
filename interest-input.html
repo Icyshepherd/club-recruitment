@@ -13,24 +13,40 @@
       </div>
     </header>
 
-    <main class="interest-main">
-      <section class="interest-block">
+    <main class="interest-main interest-main-enhanced">
+      <section class="interest-block" data-interest-group="hobbies">
         <h1>你的兴趣</h1>
-        <div class="tag-row">
-          <span class="chip">摄影</span>
-          <span class="chip">绘画</span>
-          <span class="chip">音乐</span>
+        <div class="interest-selected" data-interest-selected="hobbies"></div>
+        <div class="interest-options">
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="摄影">摄影</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="绘画">绘画</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="音乐">音乐</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="推理">推理</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="动漫">动漫</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="游戏">游戏</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="运动">运动</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="舞蹈">舞蹈</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="编程">编程</button>
+          <button class="interest-option" type="button" data-interest-option data-group="hobbies" data-value="设计">设计</button>
         </div>
       </section>
 
-      <section class="interest-block">
+      <section class="interest-block" data-interest-group="expectations">
         <h2>你对社团活动的期望</h2>
-        <div class="tag-row tag-row-optional">
-          <span class="chip">轻松兴趣</span>
-          <span class="chip">高投入</span>
-          <span class="chip">社交陪伴</span>
+        <div class="interest-selected" data-interest-selected="expectations"></div>
+        <div class="interest-options">
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="轻松兴趣">轻松兴趣</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="高投入">高投入</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="社交陪伴">社交陪伴</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="技能提升">技能提升</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="荣誉成就">荣誉成就</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="项目实战">项目实战</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="比赛训练">比赛训练</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="演出展示">演出展示</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="校园服务">校园服务</button>
+          <button class="interest-option" type="button" data-interest-option data-group="expectations" data-value="职业探索">职业探索</button>
         </div>
-        <a class="button button-dark button-large button-start" href="./Home.html">开始寻找社团</a>
+        <a class="button button-dark button-large button-start is-disabled" href="./Home.html" aria-disabled="true" data-interest-start>开始寻找社团</a>
       </section>
     </main>
     <script src="./script.js"></script>

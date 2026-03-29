@@ -12,7 +12,7 @@
         <a class="logo" href="./Home.html">社团招新平台</a>
         <nav class="top-nav" aria-label="主导航">
           <a href="./Home.html">首页</a>
-          <a href="./selection.html">社团</a>
+          <a href="./selection.html">社团报名</a>
           <a class="is-active" href="./chat.html">消息</a>
           <a href="./personal.html">我的</a>
         </nav>
@@ -20,22 +20,61 @@
     </header>
 
     <main class="chat-layout wrap">
-      <aside class="chat-sidebar">
+      <div class="chat-island-mobile">
+        <button class="chat-island-toggle" type="button" aria-expanded="false" aria-controls="chat-island">
+          消息列表
+          <span class="badge">1</span>
+        </button>
+      </div>
+
+      <aside class="chat-sidebar chat-island" id="chat-island">
         <a class="chat-item is-active" href="./chat.html">AI社团推荐</a>
-        <a class="chat-item" href="./chat.html">活动通知</a>
+        <a class="chat-item chat-item-notice" href="./chat.html">活动通知 <span class="badge">1</span></a>
         <a class="chat-item" href="./chat.html">社团A招新群</a>
         <a class="chat-item" href="./chat.html">社团B招新群</a>
       </aside>
 
-      <section class="chat-panel">
-        <div class="chat-bubble chat-bubble-user">我想要轻松一点的兴趣社团，我喜欢推理、动漫和游戏。</div>
-        <div class="chat-answer">
-          <p>好的，为你推荐以下社团：</p>
-          <p>推理小说研读社</p>
-          <p>桌游社</p>
+      <section class="chat-panel chatbot-shell">
+        <div class="chat-thread">
+          <div class="chat-message chat-message-user">
+            <div class="chat-avatar">我</div>
+            <div class="chat-bubble">我想要轻松一点的兴趣社团，我喜欢推理、动漫和游戏。</div>
+          </div>
+
+          <div class="chat-message chat-message-bot">
+            <div class="chat-avatar chat-avatar-bot">AI</div>
+            <div class="chat-response-card">
+              <p class="chat-response-title">已根据你的输入完成兴趣匹配</p>
+              <div class="analysis-block">
+                <h2>输入分析</h2>
+                <ul>
+                  <li>“轻松一点”说明你更偏向低门槛、低投入、以兴趣体验和社交陪伴为主的社团。</li>
+                  <li>“推理、动漫和游戏”集中指向故事讨论、世界观交流、桌面互动和同好型内容消费。</li>
+                  <li>因此优先推荐轻社团、兴趣主导、能快速融入且适合持续参与的社团类型。</li>
+                </ul>
+              </div>
+              <div class="analysis-block">
+                <h2>推荐社团</h2>
+                <p>更适合你的两个方向是“推理小说研读社”和“桌游社”。前者满足推理讨论与内容交流，后者更适合游戏互动和轻松社交。</p>
+              </div>
+              <div class="chat-recommend-grid">
+                <a class="club-card chat-club-card" href="./club-introduction.html">
+                  <div class="club-placeholder"></div>
+                  <p>轻松兴趣 / 内容讨论 / 同好交流</p>
+                  <h3>推理小说研读社</h3>
+                </a>
+                <a class="club-card chat-club-card" href="./club-introduction.html">
+                  <div class="club-placeholder"></div>
+                  <p>桌面互动 / 社交陪伴 / 游戏体验</p>
+                  <h3>桌游社</h3>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="chat-input">
-          <input type="text" placeholder="What would you like to know?" />
+
+        <div class="chat-input chatbot-input">
+          <input type="text" placeholder="继续告诉我你想尝试的社团类型" />
           <div class="chat-tools">
             <span>图片</span>
             <span>代码</span>
@@ -51,25 +90,19 @@
         <div><p class="footer-brand">社团招新平台</p></div>
         <div>
           <h3>首页</h3>
-          <a href="./Home.html">AI推荐</a>
-          <a href="./Home.html">精彩活动</a>
-          <a href="./Home.html">探索发现</a>
+          <a href="./Home.html">首页</a>
         </div>
         <div>
-          <h3>社团</h3>
-          <a href="./selection.html">社团检索与筛选</a>
+          <h3>社团报名</h3>
+          <a href="./selection.html">社团报名</a>
         </div>
         <div>
           <h3>消息</h3>
-          <a href="./chat.html">活动通知</a>
-          <a href="./chat.html">AI推荐</a>
+          <a href="./chat.html">消息</a>
         </div>
         <div>
           <h3>我的</h3>
-          <a href="./personal.html">兴趣标签</a>
-          <a href="./personal.html">我的社团</a>
-          <a href="./personal.html">报名进程</a>
-          <a href="./personal.html">活动记录</a>
+          <a href="./personal.html">我的</a>
         </div>
       </div>
     </footer>
