@@ -230,5 +230,71 @@
       </div>
     </footer>
     <script src="./script.js"></script>
+    <script>
+      (() => {
+        const form = document.querySelector('#club-signup [data-signup-form]');
+        const modal = document.querySelector('#tjuracing-signup-result');
+        const submitButton = form?.querySelector('[data-signup-submit]');
+        const backButton = modal?.querySelector('[data-signup-back]');
+        const progressLinks = modal?.querySelectorAll('[data-signup-progress-link]');
+
+        if (!form || !modal || !submitButton) {
+          return;
+        }
+
+        const openModal = () => {
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeModal = () => {
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+        };
+
+        const switchToProgressMode = () => {
+          submitButton.textContent = '查看报名进程';
+          submitButton.dataset.progressMode = 'true';
+          submitButton.type = 'button';
+        };
+
+        progressLinks?.forEach((link) => {
+          link.setAttribute('href', './personal.html#signup-progress');
+        });
+
+        submitButton.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (submitButton.dataset.progressMode === 'true') {
+            window.location.href = './personal.html#signup-progress';
+            return;
+          }
+
+          openModal();
+        });
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          if (submitButton.dataset.progressMode === 'true') {
+            window.location.href = './personal.html#signup-progress';
+            return;
+          }
+
+          openModal();
+        });
+
+        backButton?.addEventListener('click', () => {
+          closeModal();
+          switchToProgressMode();
+        });
+
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
