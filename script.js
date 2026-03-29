@@ -6,6 +6,27 @@ document.querySelectorAll("form").forEach((form) => {
   });
 });
 
+const loadInterestSelections = () => {
+  try {
+    const raw = localStorage.getItem(INTEREST_STORAGE_KEY);
+    if (!raw) {
+      return { hobbies: [], expectations: [] };
+    }
+
+    const parsed = JSON.parse(raw);
+    return {
+      hobbies: Array.isArray(parsed.hobbies) ? parsed.hobbies : [],
+      expectations: Array.isArray(parsed.expectations) ? parsed.expectations : [],
+    };
+  } catch (error) {
+    return { hobbies: [], expectations: [] };
+  }
+};
+
+const saveInterestSelections = (state) => {
+  localStorage.setItem(INTEREST_STORAGE_KEY, JSON.stringify(state));
+};
+
 const chatToggle = document.querySelector(".chat-island-toggle");
 const chatIsland = document.querySelector(".chat-island");
 
@@ -39,7 +60,8 @@ if (selectionTags) {
     }
 
     if (selected.length === 0) {
-      selectionTags.innerHTML = '<span class="filter-tag" data-empty="true">\u672A\u9009\u62E9\u7B5B\u9009\u6761\u4EF6</span>';
+      selectionTags.innerHTML =
+        '<span class="filter-tag" data-empty="true">\u672A\u9009\u62E9\u7B5B\u9009\u6761\u4EF6</span>';
       return;
     }
 
@@ -60,38 +82,17 @@ if (selectionTags) {
   renderSelectionTags();
 }
 
-const followButton = document.querySelector("[data-follow-toggle]");
-
-if (followButton) {
-  followButton.addEventListener("click", () => {
-    const followed = followButton.dataset.followed === "true";
-    if (!followed) {
-      followButton.dataset.followed = "true";
-      followButton.textContent = "\u5DF2\u5173\u6CE8\u2714";
-      followButton.classList.add("is-followed");
+document.querySelectorAll("[data-follow-toggle]").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.dataset.followed === "true") {
+      return;
     }
+
+    button.dataset.followed = "true";
+    button.textContent = "\u5DF2\u5173\u6CE8\u2714";
+    button.classList.add("is-followed");
   });
-}
-
-const loadInterestSelections = () => {
-  try {
-    const raw = localStorage.getItem(INTEREST_STORAGE_KEY);
-    if (!raw) {
-      return { hobbies: [], expectations: [] };
-    }
-    const parsed = JSON.parse(raw);
-    return {
-      hobbies: Array.isArray(parsed.hobbies) ? parsed.hobbies : [],
-      expectations: Array.isArray(parsed.expectations) ? parsed.expectations : [],
-    };
-  } catch (error) {
-    return { hobbies: [], expectations: [] };
-  }
-};
-
-const saveInterestSelections = (state) => {
-  localStorage.setItem(INTEREST_STORAGE_KEY, JSON.stringify(state));
-};
+});
 
 const interestOptions = document.querySelectorAll("[data-interest-option]");
 const interestStartButton = document.querySelector("[data-interest-start]");
@@ -150,6 +151,7 @@ if (interestOptions.length > 0) {
     if (!target) {
       return;
     }
+
     const group = target.dataset.removeInterest;
     const value = target.dataset.value;
     state[group] = (state[group] || []).filter((item) => item !== value);
@@ -182,14 +184,27 @@ if (personalInterestContainer) {
 }
 
 const homeInterestTags = document.querySelector("[data-home-interest-tags]");
+const homeClubName = document.querySelector("[data-home-club-name]");
+const homeClubCta = document.querySelector("[data-home-cta]");
 
 if (homeInterestTags) {
   const storedSelections = loadInterestSelections();
   const mergedTags = [...new Set([...storedSelections.hobbies, ...storedSelections.expectations])];
   const previewTags = mergedTags.slice(0, 2);
+  const racingKeyTags = [
+    "\u9AD8\u6295\u5165",
+    "\u7F16\u7A0B",
+    "\u9879\u76EE\u5B9E\u6218",
+  ];
+  const matchedRacingTags = mergedTags.filter((tag) => racingKeyTags.includes(tag));
 
   if (previewTags.length > 0) {
-    homeInterestTags.textContent = previewTags.map((tag) => `【${tag}】`).join(" ");
+    homeInterestTags.textContent = previewTags.map((tag) => `\u3010${tag}\u3011`).join(" ");
+  }
+
+  if (homeClubName && homeClubCta && matchedRacingTags.length < 2) {
+    homeClubName.textContent = "\u793E\u56E2A";
+    homeClubCta.setAttribute("href", "./club-introduction.html");
   }
 }
 
@@ -252,7 +267,82 @@ if (discoverCards.length > 0) {
       if (event.target.closest("[data-discover-card]")) {
         return;
       }
+
       discoverCards.forEach((card) => card.classList.remove("is-open"));
     });
   }
 }
+
+const signupForms = document.querySelectorAll("[data-signup-form]");
+
+signupForms.forEach((form) => {
+  const modalId = form.dataset.signupModal;
+  const modal = modalId ? document.querySelector(modalId) : null;
+  const submitButton = form.querySelector("[data-signup-submit]");
+  const backButton = modal?.querySelector("[data-signup-back]");
+  const closeLinks = modal?.querySelectorAll("[data-signup-progress-link]");
+
+  const openModal = () => {
+    if (!modal) {
+      return;
+    }
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+  };
+
+  const closeModal = () => {
+    if (!modal) {
+      return;
+    }
+
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+  };
+
+  const switchToProgressState = () => {
+    if (!submitButton) {
+      return;
+    }
+
+    submitButton.textContent = "\u67E5\u770B\u62A5\u540D\u8FDB\u7A0B";
+    submitButton.dataset.progressMode = "true";
+    submitButton.type = "button";
+  };
+
+  if (submitButton) {
+    submitButton.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (submitButton.dataset.progressMode === "true") {
+        window.location.href = "./personal.html#signup-progress";
+        return;
+      }
+
+      openModal();
+    });
+  }
+
+  form.addEventListener("submit", () => {
+    if (!submitButton || submitButton.dataset.progressMode === "true") {
+      return;
+    }
+
+    openModal();
+  });
+
+  backButton?.addEventListener("click", () => {
+    closeModal();
+    switchToProgressState();
+  });
+
+  closeLinks?.forEach((link) => {
+    link.setAttribute("href", "./personal.html#signup-progress");
+  });
+
+  modal?.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+});

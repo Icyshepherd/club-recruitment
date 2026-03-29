@@ -59,7 +59,7 @@
         <div class="intro-columns club-intro-detail">
           <article>
             <h3>基本要求及投入</h3>
-            <p>参与成本：活动频次 / 每周投入时间 / 早起熬夜需求</p>
+            <p>参与成本：活动频率 / 每周投入时间 / 早起熬夜需求</p>
             <p>技能要求：适合零基础 / 具体技能要求</p>
             <p>报名要求：可直接加入 / 体验后报名 / 需要面试</p>
           </article>
@@ -106,18 +106,54 @@
       <section class="club-section wrap">
         <h2>社团新闻</h2>
         <p class="section-subtitle">瀑布流内容，用真实活动、照片、短文案展现社团日常。</p>
-        <div class="club-gallery">
-          <img src="./image/club-introduction-shetuanfengcai-1.png" alt="社团风采图片1" />
-          <img src="./image/club-introduction-shetuanfengcai-2.png" alt="社团风采图片2" />
-          <img src="./image/club-introduction-shetuanfengcai-3.png" alt="社团风采图片3" />
-          <img src="./image/club-introduction-shetuanfengcai-4.png" alt="社团风采图片4" />
+        <div class="discover-grid discover-grid-interactive club-gallery-discover">
+          <article class="discover-card" data-discover-card>
+            <img src="./image/Home-tansuofaxian-1.png" alt="社团新闻图片1" data-discover-image />
+            <div class="discover-overlay" data-discover-overlay>
+              <p class="discover-overlay-name">社团名称</p>
+              <h3>活动新闻标题</h3>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+            </div>
+          </article>
+          <article class="discover-card" data-discover-card>
+            <img src="./image/Home-tansuofaxian-2.png" alt="社团新闻图片2" data-discover-image />
+            <div class="discover-overlay" data-discover-overlay>
+              <p class="discover-overlay-name">社团名称</p>
+              <h3>活动新闻标题</h3>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+            </div>
+          </article>
+          <article class="discover-card" data-discover-card>
+            <img src="./image/Home-tansuofaxian-3.png" alt="社团新闻图片3" data-discover-image />
+            <div class="discover-overlay" data-discover-overlay>
+              <p class="discover-overlay-name">社团名称</p>
+              <h3>活动新闻标题</h3>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+            </div>
+          </article>
+          <article class="discover-card" data-discover-card>
+            <img src="./image/Home-tansuofaxian-4.png" alt="社团新闻图片4" data-discover-image />
+            <div class="discover-overlay" data-discover-overlay>
+              <p class="discover-overlay-name">社团名称</p>
+              <h3>活动新闻标题</h3>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+              <p>几句话简介活动内容</p>
+            </div>
+          </article>
         </div>
-        <button class="button button-dark button-small" type="button">了解更多</button>
+        <button class="button button-dark button-small club-news-more" type="button">了解更多</button>
       </section>
 
       <section class="club-section wrap">
         <h2>部门/岗位</h2>
-        <p class="section-subtitle">一句话介绍。该模块针对核心组织型社团，小型兴趣社团可省略</p>
+        <p class="section-subtitle">一句话介绍。该模块针对核心组织型社团，小型兴趣社团可省略。</p>
         <div class="role-grid role-grid-detailed">
           <article class="role-card role-card-pink">
             <div class="role-card-head"><span class="role-icon"></span><div><h3>部门A</h3><p>规模（如人数）</p></div></div>
@@ -170,7 +206,7 @@
             <h2>社团名称</h2>
             <p>报名信息填写</p>
           </div>
-          <form class="club-signup-form">
+          <form class="club-signup-form" data-signup-form data-signup-modal="#club-signup-result">
             <label>
               <span>想加入的原因</span>
               <input type="text" placeholder="Value" />
@@ -195,11 +231,23 @@
               <input type="checkbox" checked />
               <span>I accept the terms<br /><a href="./club-introduction.html">Read our T&amp;Cs</a></span>
             </label>
-            <button class="button button-dark club-signup-submit" type="submit">确认报名</button>
+            <button class="button button-dark club-signup-submit" type="submit" data-signup-submit>确认报名</button>
           </form>
         </article>
       </section>
     </main>
+
+    <div class="signup-result-modal" id="club-signup-result" aria-hidden="true">
+      <div class="signup-result-card">
+        <div class="signup-result-icon">✓</div>
+        <h2>报名成功</h2>
+        <p>社团名称</p>
+        <div class="signup-result-actions">
+          <button class="button button-light" type="button" data-signup-back>返回</button>
+          <a class="button button-dark" href="./personal.html#signup-progress" data-signup-progress-link>查看报名进程</a>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="wrap footer-grid">
@@ -223,5 +271,71 @@
       </div>
     </footer>
     <script src="./script.js"></script>
+    <script>
+      (() => {
+        const form = document.querySelector('#club-signup [data-signup-form]');
+        const modal = document.querySelector('#club-signup-result');
+        const submitButton = form?.querySelector('[data-signup-submit]');
+        const backButton = modal?.querySelector('[data-signup-back]');
+        const progressLinks = modal?.querySelectorAll('[data-signup-progress-link]');
+
+        if (!form || !modal || !submitButton) {
+          return;
+        }
+
+        const openModal = () => {
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeModal = () => {
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+        };
+
+        const switchToProgressMode = () => {
+          submitButton.textContent = '查看报名进程';
+          submitButton.dataset.progressMode = 'true';
+          submitButton.type = 'button';
+        };
+
+        progressLinks?.forEach((link) => {
+          link.setAttribute('href', './personal.html#signup-progress');
+        });
+
+        submitButton.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (submitButton.dataset.progressMode === 'true') {
+            window.location.href = './personal.html#signup-progress';
+            return;
+          }
+
+          openModal();
+        });
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          if (submitButton.dataset.progressMode === 'true') {
+            window.location.href = './personal.html#signup-progress';
+            return;
+          }
+
+          openModal();
+        });
+
+        backButton?.addEventListener('click', () => {
+          closeModal();
+          switchToProgressMode();
+        });
+
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -262,6 +262,9 @@ button, input { font: inherit; }
   font-size: 13px;
   line-height: 1.5;
 }
+.club-news-more {
+  margin-top: 24px;
+}
 .site-footer { margin-top: 28px; padding: 36px 0 88px; background: var(--orange); }
 .footer-grid { display: grid; grid-template-columns: 1.2fr repeat(4, 1fr); gap: 32px; }
 .footer-brand, .footer-grid h3, .footer-grid a { color: #fff; }
@@ -305,6 +308,15 @@ button, input { font: inherit; }
   border: 1px solid var(--line);
   border-radius: 8px;
   background: linear-gradient(135deg, #efefef, #e4e4e4);
+}
+.club-card-image {
+  width: 100%;
+  aspect-ratio: 1 / .82;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f3f3f3;
+  object-fit: cover;
 }
 .chat-layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
 .chat-island-mobile { display: none; }
@@ -427,8 +439,27 @@ button, input { font: inherit; }
 }
 .chat-input { max-width: 100%; border: 1px solid rgba(17,17,17,.08); border-radius: 20px; padding: 18px; background: #fff; }
 .chat-input input { width: 100%; min-height: 42px; border: 0; outline: 0; }
-.chat-tools { display: flex; align-items: center; gap: 18px; color: #444; }
-.chat-tools button { margin-left: auto; width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--orange); color: #fff; }
+.chat-tools { display: flex; align-items: center; gap: 10px; color: #444; }
+.chat-tool-button {
+  min-width: 58px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid rgba(17,17,17,.12);
+  border-radius: 999px;
+  background: #fff8eb;
+  color: #111;
+  font-weight: 700;
+}
+.chat-tools > button:last-child {
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+}
 .personal-page { max-width: 980px; }
 .personal-section { margin-bottom: 46px; }
 .personal-actions {
@@ -825,6 +856,57 @@ button, input { font: inherit; }
   width: 100%;
   border-radius: 14px;
 }
+#signup-progress {
+  scroll-margin-top: 24px;
+}
+.signup-result-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(17,17,17,.28);
+  z-index: 30;
+}
+.signup-result-modal.is-open {
+  display: flex;
+}
+.signup-result-card {
+  width: min(440px, 100%);
+  padding: 34px 28px 28px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.signup-result-icon {
+  width: 78px;
+  height: 78px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #e7f6ee;
+  color: #53a66b;
+  font-size: 2rem;
+  font-weight: 900;
+}
+.signup-result-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.65rem;
+}
+.signup-result-card p {
+  margin: 0;
+  color: var(--muted);
+}
+.signup-result-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
 
 @media (max-width: 900px) {
   .hero-layout, .selection-main, .chat-layout, .join-inline, .intro-columns, .resource-grid, .role-grid, .footer-grid, .club-grid, .card-grid-3, .racing-contact-grid, .racing-process-card { grid-template-columns: 1fr; }
@@ -885,5 +967,6 @@ button, input { font: inherit; }
   .club-signup-card,
   .progress-card { padding: 18px; }
   .racing-process-card { padding: 18px; }
+  .signup-result-actions { grid-template-columns: 1fr; }
   .site-footer { padding-bottom: 40px; }
 }
