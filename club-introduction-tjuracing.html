@@ -54,7 +54,7 @@
       </section>
 
       <section class="club-section wrap">
-        <p class="club-location">工程创新中心一楼</p>
+        <p class="club-location">官网：www.tjuracing.com</p>
         <h2>把课堂知识变成赛道极限，把工程理想写进汽车产业未来</h2>
         <p class="club-lead">同济翼驰车队成立于 2007 年，隶属于同济大学汽车与能源学院，是国内大学生方程式赛场上的代表性学生车队之一。</p>
         <p class="club-lead">车队围绕整车开发、控制策略、空气动力学、轻量化制造与商业传播等方向协同推进，强调真实项目中的跨部门配合与工程交付。</p>
@@ -230,71 +230,5 @@
       </div>
     </footer>
     <script src="./script.js"></script>
-    <script>
-      (() => {
-        const form = document.querySelector('#club-signup [data-signup-form]');
-        const modal = document.querySelector('#tjuracing-signup-result');
-        const submitButton = form?.querySelector('[data-signup-submit]');
-        const backButton = modal?.querySelector('[data-signup-back]');
-        const progressLinks = modal?.querySelectorAll('[data-signup-progress-link]');
-
-        if (!form || !modal || !submitButton) {
-          return;
-        }
-
-        const openModal = () => {
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-        };
-
-        const closeModal = () => {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-        };
-
-        const switchToProgressMode = () => {
-          submitButton.textContent = '查看报名进程';
-          submitButton.dataset.progressMode = 'true';
-          submitButton.type = 'button';
-        };
-
-        progressLinks?.forEach((link) => {
-          link.setAttribute('href', './personal.html#signup-progress');
-        });
-
-        submitButton.addEventListener('click', (event) => {
-          event.preventDefault();
-
-          if (submitButton.dataset.progressMode === 'true') {
-            window.location.href = './personal.html#signup-progress';
-            return;
-          }
-
-          openModal();
-        });
-
-        form.addEventListener('submit', (event) => {
-          event.preventDefault();
-
-          if (submitButton.dataset.progressMode === 'true') {
-            window.location.href = './personal.html#signup-progress';
-            return;
-          }
-
-          openModal();
-        });
-
-        backButton?.addEventListener('click', () => {
-          closeModal();
-          switchToProgressMode();
-        });
-
-        modal.addEventListener('click', (event) => {
-          if (event.target === modal) {
-            closeModal();
-          }
-        });
-      })();
-    </script>
   </body>
 </html>
